@@ -80,7 +80,8 @@ ArrayList<Movies> MovieList = new ArrayList<>();
             Movies clickedMovie = MovieList.get(mRecyclerView.getChildAdapterPosition(v));
             Intent movieDetailsIntent = new Intent(getApplicationContext(), movieDetail.class);
             movieDetailsIntent.putParcelableArrayListExtra(EXTRA_PARCEL, MovieList);
-
+            movieDetailsIntent.putExtra(EXTRA_ID, clickedMovie.getId());
+            startActivity(movieDetailsIntent);
         }
     }
 }
